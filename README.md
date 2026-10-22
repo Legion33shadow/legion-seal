@@ -49,5 +49,6 @@ or the security of a project. Proof pages carry Open Graph previews; new public 
 | `verify_seal.py` | single-file offline verifier, byte-identical to `/seal/v1/verify_seal.py` |
 | `client/seal_client.py` | hash locally, submit the hash, save the receipt (standard library only) |
 | `docs/RULES.md` | registry rules, byte-identical to `/seal/v1/rules` and to leaf 0 |
+| `docs/RULES_v1.md` | rules version 1 (per-IP Genesis cap removed); its SHA-256 is sealed by the operator, label "LEGION SEAL rules v1" |
 
 License: MIT.
