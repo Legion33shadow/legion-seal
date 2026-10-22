@@ -4,6 +4,15 @@ Version 1 replaces version 0. Version 0 is sealed as leaf 0 and stays in the log
 before the leaf that seals these rules. Version 1 applies from that leaf on: its SHA-256 is sealed by the operator
 with the label "LEGION SEAL rules v1". Changing the rules again requires a new version sealed in a later leaf.
 
+## Version history
+- The rules that apply to an entry are the latest version sealed before its `leaf_index`: version 0 for the leaves
+  before the version-1 leaf, version 1 from that leaf on. Earlier versions stay published: this is the versioning
+  model, not an error.
+- Version 0: leaf 0, SHA-256 `492da8f6cb7f789556ae49d3c28f41204a989d42a231057aae233689d0fa25ad`,
+  https://seal.legion-api.com/seal/v1/rules/v0
+- Version 1 (these rules): https://seal.legion-api.com/seal/v1/rules/v1, also served at /seal/v1/rules once its leaf
+  is sealed.
+
 ## Change from version 0
 - The per-IP Genesis cap (3 Genesis entries per hashed IP) is removed. It refused legitimate seals, for example
   builds from shared CI runners, and it was not a real Sybil defence: many addresses bypassed it.
