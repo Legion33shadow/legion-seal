@@ -12,7 +12,7 @@ jobs:
       - run: mkdir dist && cp verify_seal.py dist/ && sha256sum dist/*
       - run: python3 --version && (python3 -c "import cryptography; print('cryptography', cryptography.__version__)" || echo "cryptography ABSENT")
       - id: seal
-        uses: Legion33shadow/seal-release-action@main
+        uses: Legion33shadow/seal-release-action@v1
         with:
           files: dist/*
           test: "true"
